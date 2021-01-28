@@ -1,4 +1,5 @@
-# Knapsack-problem-IM1003-assignement-2_3
+# Knapsack-problem-simplifeid version
+IM1003-assignement3-problem-1
 
 ## Problem
 You will be given n items, and the weight would be $x_1$, $x_2$ ... to $x_n$ kilograms respectively. The goal is to use minimum boxes to store all the items.
