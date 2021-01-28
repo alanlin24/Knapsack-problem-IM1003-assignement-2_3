@@ -1,2 +1,39 @@
 # Knapsack-problem-IM1003-assignement-2_3
-You will be given n items, and the weight would be $$x_1$$ , $x_2$ ... to $x_n$ respectively. The goal is to us minimum boxes to store all the items.
+
+## Problem
+You will be given n items, and the weight would be $x_1$, $x_2$ ... to $x_n$ kilograms respectively. The goal is to use minimum boxes to store all the items.
+
+此題有n個物品，其重量分別為$x_1$, $x_2$ ... 直到 $x_n$公斤，而每一個箱子的最高承載為 $W$ 公斤。要最小化總使用的箱子數量。<br>
+我們實做了一個簡單的演算法（方法）：從第一個箱子開始依序裝（物品 1、物品 2，依此類推），直到該箱子裝不下下一個物品為止，就拿出一個新的箱子開始裝下一個物品，反覆如此直到裝完為止。（箱子可以回頭裝）<br>
+舉例來說，假設 $x_1$ = 2、$x_2$ = 2、$x_3$ = 5、$x_4$ = 1，且 $W$ = 5。
+裝法為：先將物品 1 裝入第一個箱子中，裝物品 2 時，因為第一個箱子仍然夠裝，因此繼續裝到第一個箱子中，
+裝物品 3 時，因為若將物品 3 裝入第一個裝子總重會超過 5 公斤，因此需裝到第二個箱子中。
+最後考慮物品 4，我們發現若將物品 4 裝入第一個箱子，並不會使第一個箱子超重，因此將物品 4 裝入第一個箱子中。如此一來，總共便只使用了兩個箱子。在本題中，針對每一個物品，我們都會考慮回頭裝，只有在已經被使用的箱子都不能容納這個物品時，才會使用一個新的箱子。在考慮回頭裝時，我們必須依照箱子被啟用的順序，先考慮第一個箱子，再考慮第二個箱子，依此類推，一找到一個可以裝的箱子就馬上使用。
+
+請寫一個程式，讀入上述資訊，計算出總共需要用到多少箱子。
+
+## Input
+系統會提供一共 10 組測試資料，每組測試資料裝在一個檔案裡。
+在每個檔案中，第一行會有兩個整數，依序為 $n$ 與 $W$。
+第二行有 $n$ 個整數，依序是 $x_1$、$x_2$、$x_3$ 直到 $x_n$。
+已知 $1≤n≤200$、$1≤W≤100$、$1≤x_n≤W$。
+
+## Output
+讀入這些資訊後，請依照題目指定的規則，計算用掉的箱子數。
+
+## Sample Input
+#sample 1 <br>
+4 5<br>
+2 2 5 1 <br>
+
+#sample 2<br>
+6 10<br>
+7 5 2 2 9 4<br>
+
+## Sample Output
+#sample 1 <br>
+2<br>
+
+
+#sample 2<br>
+4
